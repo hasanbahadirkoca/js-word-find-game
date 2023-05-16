@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+    <title>Word Guess</title>
+
+    <style>
+        .letter {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">KELİME OYUNU</h1>
+    <div id="welcome">- Tahminde bulunmak istediğiniz harfe tıklayın. -</div>
+
+    <div id="game_board_container"><span id="game_board"></span></div>
+
+    <div id="guessed_container"><span id="guessed"></span></div>
+    <div id="win_loss_container">Kazanılan: <span id="wins"></span> &nbsp&nbsp&nbsp Kaybedilen: <span
+            id="losses"></span></div>
+    <div id="guesses_remaining_container">Kalan Tahmin Hakkı: <span id="guesses_remaining"></span> </div>
+
+    <div id="letter_container">
+        <script>
+            var letters = 'ABCDEFGHIİJKLMNOÖPRSŞTUÜVYZ';
+            for (var i = 0; i < letters.length; i++) {
+                var letter = letters[i];
+                document.write('<div class="letter" onclick="onLetterClick(\'' + letter + '\')" data-letter="' + letter + '">' + letter + '</div>');
+            }
+        </script>
+    </div>
+
+
+    <script src="assets/javascript/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</body>
+
+</html>
